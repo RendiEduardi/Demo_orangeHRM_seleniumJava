@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven3'
+    }
+
     stages {
 
         stage('Checkout') {
@@ -9,10 +13,26 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Test') {
             steps {
                 bat 'mvn clean test'
             }
+        }
+
+        stage('Generate Allure Report') {
+            steps {
+                bat 'mvn allure:report'
+            }
+        }
+    }
+
+    post {
+        always {
+            allure([
+                includeProperties: false,
+                jdk: '',
+                results: [[path: 'target/allure-results']]
+            ])
         }
     }
 }

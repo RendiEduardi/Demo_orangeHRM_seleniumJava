@@ -15,11 +15,6 @@ pipeline {
             }
         }
 
-        stage('Generate Allure Report') {
-            steps {
-                bat 'mvn allure:report'
-            }
-        }
     }
 
     post {

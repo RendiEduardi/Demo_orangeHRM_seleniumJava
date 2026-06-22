@@ -56,7 +56,7 @@ public class LoginStepDefinitions {
 
     @And("user menekan tombol login")
     public void userMenekanTombolLogin() {
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[type='submit']"))).click()
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[type='submit']"))).click();
     }
 
     @Then("user berhasil masuk ke halaman dashboard")

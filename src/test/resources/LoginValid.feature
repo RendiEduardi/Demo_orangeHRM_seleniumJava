@@ -1,6 +1,7 @@
 Feature: Login dengan valid User OrangeHRM
 
   Scenario: Login berhasil dengan credential valid
+    Given user berada di halaman login OrangeHRM
     When user mengisi username "Admin"
     And user mengisi password "admin123"
     And user menekan tombol login

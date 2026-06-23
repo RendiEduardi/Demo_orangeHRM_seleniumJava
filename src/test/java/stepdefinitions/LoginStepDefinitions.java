@@ -85,8 +85,8 @@ public class LoginStepDefinitions {
     @And("user mengisi username pencarian {string}")
     public void userMengisiUsernamePencarian(String username) {
         WebElement usernameInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.xpath("//label[text()='Username']/../following-sibling::div//input")
-                //By.xpath("//input[@class='oxd-input oxd-input--focus']")
+                //By.xpath("//label[text()='Username']/../following-sibling::div//input")
+                By.xpath("//input[@class='oxd-input oxd-input--focus']")
         ));
         usernameInput.clear();
         usernameInput.sendKeys(username);
